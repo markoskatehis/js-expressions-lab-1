@@ -14,9 +14,61 @@
 //! After creating the four variables mentioned above, uncomment the following lines
 //* This way you can export them to the test file, this is essential for the tests to work
 
+const day1TempF = 32
+const day2TempC = 25
+const day3TempF = 70
+const day4TempC = 18
+const day5TempF = 80
+const day6TempC = 15
+const day7TempF = 72
+const day8TempC = 28
+const day9TempF = 68
+const day10TempC = 20
+const day11TempF = 75
+const day12TempC = 23
+const day13TempF = 82
+const day14TempC = 30
+const day15TempF = 65
+const day16TempC = 22
+const day17TempF = 77
+const day18TempC = 26
+const day19TempF = 78
+const day20TempC = 24
+const day21TempF = 73
+const day22TempC = 21
+const day23TempF = 79
+const day24TempC = 27
+const day25TempF = 71
+const day26TempC = 19
+const day27TempF = 74
+const day28TempC = 17
+const day29TempF = 76
+const day30TempC = 29
+
+const celsiusTemps = [25, 18, 15, 28, 20, 23, 30, 22, 24, 21, 27, 19, 26, 17, 29];
+const fahrenheitTemps = [32, 70, 80, 72, 68, 75, 82, 65, 77, 78, 73, 79, 71, 74, 76];
+
+const celsiusTempsToFahrenheit = celsiusTemps.map(temp => ((temp * 9 / 5) + 32));
+const fahrenheitTempsToCelsius = fahrenheitTemps.map(temp => ((temp - 32) * 5 / 9));
+
+const allTempsInFahrenheit = [...fahrenheitTemps, ...celsiusTempsToFahrenheit];
+const allTempsInCelsius = [...celsiusTemps, ...fahrenheitTempsToCelsius];
+
+const temperature_in_fahrenheit = allTempsInFahrenheit.reduce((sum, temp) => sum + temp, 0);
+const temperature_in_celsius = allTempsInCelsius.reduce((sum, temp) => sum + temp, 0);
+
+const meanFahrenheit = temperature_in_fahrenheit / allTempsInFahrenheit.length;
+const meanCelsius = temperature_in_celsius / allTempsInCelsius.length;
+
+const tot_temperature_in_fahrenheit = temperature_in_fahrenheit
+const tot_temperature_in_celsius = temperature_in_celsius
+
+const avg_temperature_in_fahrenheit = meanFahrenheit
+const avg_temperature_in_celsius = meanCelsius
+
 module.exports = {
-    // tot_temperature_in_fahrenheit,
-    // tot_temperature_in_celsius,
-    // avg_temperature_in_fahrenheit,
-    // avg_temperature_in_celsius
+    tot_temperature_in_fahrenheit,
+    tot_temperature_in_celsius,
+    avg_temperature_in_fahrenheit,
+    avg_temperature_in_celsius
 };
